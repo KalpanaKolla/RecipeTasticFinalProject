@@ -7,7 +7,7 @@ namespace RecipeTastic.Models
 {
     public class MealType
     {
-        public int MealTypeID { get; set; }
+        public int MealTypeId { get; set; }
         public string MealTypeName { get; set; }
     }
 }
