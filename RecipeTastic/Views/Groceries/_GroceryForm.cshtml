@@ -1,0 +1,13 @@
+﻿@model RecipeTastic.Models.Grocery
+<div class="form-group">
+    @Html.LabelFor(m => m.GroceryName)
+    @Html.TextBoxFor(m => m.GroceryName, new { @class = "form-control" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.GroceryComment)
+    @Html.TextAreaFor(m => m.GroceryComment, new { @class = "form-control", rows = 4 })
+</div>
+@Html.HiddenFor(m => m.GroceryId)
+
+<input type="submit" class="btn btn-primary" value="Save" />
+

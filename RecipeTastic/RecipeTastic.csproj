@@ -206,12 +206,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\BundleConfig2.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\FilterConfig2.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\RouteConfig2.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CuisinesController.cs" />
+    <Compile Include="Controllers\GroceriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RecipesController.cs" />
@@ -251,6 +255,10 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-RecipeTastic-20181201115300.mdf" />
+    <Content Include="App_Data\aspnet-RecipeTastic-20181201115300_log.ldf">
+      <DependentUpon>aspnet-RecipeTastic-20181201115300.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-lumen.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -312,10 +320,13 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Cuisines\Index.cshtml" />
     <Content Include="Views\Recipes\Index.cshtml" />
+    <Content Include="Views\Groceries\Index.cshtml" />
+    <Content Include="Views\Groceries\New.cshtml" />
+    <Content Include="Views\Groceries\Edit.cshtml" />
+    <Content Include="Views\Groceries\_GroceryForm.cshtml" />
+    <Content Include="Views\Groceries\Delete.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

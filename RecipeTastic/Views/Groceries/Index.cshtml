@@ -1,0 +1,23 @@
+﻿@model IEnumerable<RecipeTastic.Models.Grocery>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<p>
+    @Html.ActionLink("Add Grocery", "New")
+</p>
+<h2>Summary</h2>
+
+<table class="table table-striped">
+    <thead>       <tr>         <th>Grocery Name</th>         <th>Grocery Comment</th>       </tr>     </thead>
+    <tbody>
+        @foreach (var Grocery in Model)
+        {
+            <tr>
+                <td>@Grocery.GroceryName</td>
+                <td>@Grocery.GroceryComment</td>
+                <td>@Html.ActionLink("Edit", "Edit", new { id = Grocery.GroceryId })</td>
+                <td>@Html.ActionLink("Delete", "Delete", new { id = Grocery.GroceryId })</td>
+            </tr>
+        }
+</table>
+

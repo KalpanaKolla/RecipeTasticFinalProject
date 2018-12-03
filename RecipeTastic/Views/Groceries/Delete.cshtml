@@ -1,0 +1,20 @@
+﻿
+@model RecipeTastic.Models.Grocery
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+<p>Are you sure you would like to delete this Grocery Item? </p>
+<ul>
+    <li>Grocery Name: @Model.GroceryName</li>
+    <li>Comments: @Model.GroceryComment</li>
+</ul>
+@using (Html.BeginForm("DoDelete", "Groceries", FormMethod.Post))
+{
+    @Html.HiddenFor(m => m.GroceryId)
+    <input type="submit" class="btn btn-danger" value="Yes, Delete it!" />
+    @Html.ActionLink("No, back to Groceries", "Index")
+}
+
