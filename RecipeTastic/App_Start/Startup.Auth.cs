@@ -58,11 +58,11 @@ namespace RecipeTastic
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "816506072823-varmkuak13hptq2et4dodorkl1u5vevq.apps.googleusercontent.com",
+                ClientSecret = "pBnYWgHrYFH2ITTJSadGUUSU"
+            });
         }
     }
 }

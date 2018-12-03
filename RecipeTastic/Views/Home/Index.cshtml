@@ -9,18 +9,19 @@
 
 <div class="row">
     <div class="col-md-4">
-        <h3>@Html.ActionLink("Recipe Search By Cusine", "RSearch", "Home")</h3>
+        <h3>@Html.ActionLink("Recipe Search By Cuisine", "Index", "Cuisines")</h3>
         <p>
-            It's the set of instructions that describes how to prepare or make something
-            especially a culinary dish.
+            @*It's the set of instructions that describes how to prepare or make something
+            especially a culinary dish.*@
+            Search Recipes by Cuisine.
         </p>
     </div>
-    <div class="col-md-4">
+    @*<div class="col-md-4">
         <h3>@Html.ActionLink("Recipe Search Meal Type", "MSearch", "Home")</h3>
         <p>Search Recipes by meal types.</p>
-    </div>
+    </div>*@
     <div class="col-md-4">
-        <h3>@Html.ActionLink("Recipe Search Ingredients", "SearchIngredients", "Home")</h3>
+        <h3>@Html.ActionLink("Recipe Search Ingredients", "Index", "Recipes")</h3>
         <p>Search Recipes by ingredients.</p>
     </div>
 </div>

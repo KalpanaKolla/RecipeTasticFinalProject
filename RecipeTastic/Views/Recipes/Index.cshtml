@@ -1,0 +1,55 @@
+﻿@model IEnumerable<RecipeTastic.Models.RecipeByIngredient>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Search Recipes By Ingredients</h2>
+@using (Html.BeginForm("Index", "Recipes"))
+{
+    <div>
+        Please provide the ingredients:<br>
+        <input type="text" name="ingredients">
+        <input type="submit" value="Search Recipe" />
+    </div>
+}
+<br />
+<div>
+    <table class="table table-bordered table-hover">
+        <tr>
+            <th>Recipe Title</th>
+            <th>Image</th>
+            <th>Image Type</th>
+            <th>Used Ingredient Count</th>
+            <th>Missed Ingredient Count</th>
+            <th>Likes</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Image)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ImageType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UsedIngredientCount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MissedIngredientCount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Likes)
+                </td>
+
+            </tr>
+        }
+
+    </table>
+</div>

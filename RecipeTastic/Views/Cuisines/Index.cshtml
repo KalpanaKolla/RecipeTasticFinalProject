@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Search Recipes By Cuisine</h2>
+
+@using (Html.BeginForm("", ""))
+{
+    <div class="form-group">
+        Select Cuisine : @Html.DropDownList("CuisineList")
+    </div>
+}
+
+<br />
+<table id="itemTable" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Recipe Id</th>
+            <th>Recipe Title</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+    $("#CuisineList").change(function () {
+    $.ajax({
+    type: 'GET',
+    url: '@Url.Action("GetItemsByCuisineID")',
+    datatype: JSON,
+    data: { 'cuisineId': $("#CuisineList").val() },
+    success: function (data) {
+    $('#itemTable tbody').empty();
+
+    $.each(data, function (i, item) {
+    var rows =
+    "<tr>"
+        +
+        "<td>" + item.ItemId + "</td>"
+        +
+        "<td>" + item.ItemName + "</td>"
+        "</tr>";
+    $('#itemTable tbody').append(rows);
+    });
+    },
+    error: function (data) { }
+    });
+    });
+    });
+    </script>
+
+}
