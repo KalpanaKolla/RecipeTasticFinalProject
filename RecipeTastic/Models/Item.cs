@@ -15,7 +15,8 @@ namespace RecipeTastic.Models
 
         public MealType MealType { get; set; }
         public int MealTypeId { get; set; }
-
+        
+        public DateTime MealDate { get; set; }
     }
 }
 

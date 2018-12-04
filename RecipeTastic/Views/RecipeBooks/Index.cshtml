@@ -1,0 +1,80 @@
+﻿@model IEnumerable<RecipeTastic.Models.RecipeBook>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<div class="form-group">
+    @Html.ActionLink("New Recipe", "New", "RecipeBooks", new { @class = "btn btn-primary" })
+</div>
+<table id="recipebook" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Recipe Title</th>
+            <th>Cuisine</th>
+            <th>Ingredients</th>
+            <th>Preparation Time</th>
+            <th>Servings</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            var table = $("#recipebook").DataTable({
+                ajax: {
+                    url: "/api/recipebooks",
+                    dataSrc:""
+                },
+                columns: [
+                    {
+                        data: "recipeTitle",
+                        render: function (data, type, recipeBook) {
+                            return "<a href='/recipeBooks/edit/" + recipeBook.recipeBookId + "'>" + data + "</a>";
+                        }
+                    },
+                    {
+                        data:"cuisine.cuisineName",
+                    },
+                    {
+                        data:"ingredients",
+                    },
+                    {
+                        data:"readyInMinutes",
+                    },
+                    {
+                        data:"servings",
+                    },
+                    {
+                        data: "recipeBookId",
+                        render: function (data) {
+                            return "<button class='btn-link js-delete' data-recipebook-id=" + data + ">Delete</button>"
+                        }
+                    }
+                ]
+            });
+
+            $("#recipebook").on("click",".js-delete", function () {
+                var button = $(this);
+                bootbox.confirm("Are you sure you want to delete this recipe?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: "/api/recipebooks/" + button.attr("data-recipebook-id"),
+                            method: "DELETE",
+                            success: function () {
+                                table.row(button.parents("tr")).remove().draw()
+                            }
+                        });
+                    }
+
+                });
+
+            });
+        });
+    </script>
+}

@@ -24,6 +24,7 @@ namespace RecipeTastic.Models
         public DbSet<MealType> MealTypes { get; set; }
         public DbSet<Item> Items { get; set; }
         public DbSet<Grocery> Groceries { get; set; }
+        public DbSet<RecipeBook> RecipeBooks { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
