@@ -33,7 +33,9 @@
                     @Html.DisplayFor(modelItem => item.Title)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Image)
+                    <div class="display-field">
+                        <img src="@Url.Content(item.Image)" alt="Testing Recipe Image" style="height:50%; width:50%" />
+                    </div>
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.ImageType)

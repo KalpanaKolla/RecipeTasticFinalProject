@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -12,7 +13,7 @@ namespace RecipeTastic.Controllers
     public class RecipesController : Controller
     {
         // GET: Recipes
-        public async System.Threading.Tasks.Task<ViewResult> Index(string ingredients)
+        public async Task<ViewResult> Index(string ingredients)
         {
             List<RecipeByIngredient> RecipeInfo = new List<RecipeByIngredient>();
             var response = await SearchRecipeAsync(ingredients);
@@ -22,7 +23,7 @@ namespace RecipeTastic.Controllers
         }
 
         [HttpGet]
-        private async System.Threading.Tasks.Task<string> SearchRecipeAsync(string ingredients)
+        private async Task<string> SearchRecipeAsync(string ingredients)
         {
             using (var client = new HttpClient())
             {
