@@ -227,6 +227,7 @@
     <Compile Include="Controllers\GroceriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MealPlansController.cs" />
     <Compile Include="Controllers\RecipeBooksController.cs" />
     <Compile Include="Controllers\RecipesController.cs" />
     <Compile Include="Dtos\RecipeBookDto.cs" />
@@ -523,6 +524,7 @@
     <Content Include="Views\Groceries\Delete.cshtml" />
     <Content Include="Views\RecipeBooks\Index.cshtml" />
     <Content Include="Views\RecipeBooks\RecipeBookForm.cshtml" />
+    <Content Include="Views\MealPlans\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
