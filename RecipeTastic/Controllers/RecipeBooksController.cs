@@ -1,10 +1,8 @@
 ﻿using RecipeTastic.Models;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using RecipeTastic.ViewModels;
+using Microsoft.AspNet.Identity;
 
 namespace RecipeTastic.Controllers
 {
@@ -29,10 +27,11 @@ namespace RecipeTastic.Controllers
             };
             return View("RecipeBookForm", viewModel);
         }
-        // GET: Customers
+        // GET: Recipes
         public ActionResult Index()
         {
-            return View();
+            var recipes = _context.RecipeBooks.ToList().Where(x => x.UserId == HttpContext.User.Identity.GetUserName());
+            return View(recipes);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]

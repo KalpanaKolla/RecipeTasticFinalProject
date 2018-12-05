@@ -2,12 +2,12 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<p>
-    @Html.ActionLink("Add Grocery", "New","Groceries",new { @class="btn btn-primary"})
-</p>
-<h2>Summary</h2>
 
-<table class="table table-bordered table-striped">
+<h2>Grocery List</h2>
+<p>
+    @Html.ActionLink("Add Grocery", "New", "Groceries", new { @class = "btn btn-primary" })
+</p>
+<table id="grocerytable" class="table table-bordered table-striped">
     <thead>
     <tr>
         <th>Grocery Name</th>

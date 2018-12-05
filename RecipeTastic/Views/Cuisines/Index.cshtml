@@ -14,7 +14,7 @@
 }
 
 <br />
-<table id="itemTable" class="table table-bordered table-hover">
+<table id="itemTable" class="table table-bordered table-striped">
     <thead>
         <tr>
             <th>Recipe Id</th>
@@ -27,6 +27,7 @@
 {
     <script>
         $(document).ready(function () {
+            $("#itemTable").DataTable();
     $("#CuisineList").change(function () {
     $.ajax({
     type: 'GET',

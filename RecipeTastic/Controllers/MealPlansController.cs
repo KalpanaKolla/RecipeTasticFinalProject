@@ -1,10 +1,7 @@
 ﻿using RecipeTastic.Models;
-using System;
 using System.Collections.Generic;
 using System.Data.Entity;
-using System.Web;
 using System.Web.Mvc;
-
 
 namespace RecipeTastic.Controllers
 {
@@ -25,8 +22,6 @@ namespace RecipeTastic.Controllers
             List<Item> items = new List<Item>();
             items = _context.Items.Include(i => i.MealType).ToListAsync().Result;
             return Json(items, JsonRequestBehavior.AllowGet);
-
-
         }
     }
 }

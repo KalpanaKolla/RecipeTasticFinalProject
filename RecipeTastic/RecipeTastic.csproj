@@ -285,6 +285,7 @@
     <Content Include="App_Data\aspnet-RecipeTastic-20181201115300_log.ldf">
       <DependentUpon>aspnet-RecipeTastic-20181201115300.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\bootstrap-darkly.css" />
     <Content Include="Content\bootstrap-lumen.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />

@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace RecipeTastic.Controllers
@@ -35,7 +34,6 @@ namespace RecipeTastic.Controllers
         {
             List<Item> items = new List<Item>();
             items = _context.Items.Where(x => x.CuisineId == cuisineId).ToList();
-
             return Json(items, JsonRequestBehavior.AllowGet);
         }
     }

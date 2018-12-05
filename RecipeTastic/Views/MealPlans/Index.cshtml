@@ -14,23 +14,16 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js"></script>
 
     <script>
-
         $(document).ready(function() {
             var items = [];
-            //alert('Coming here')
             $.ajax({
-
-
                 type: "GET",
                 url: "/MealPlans/GetItems",
                 success: function (data) {
                     $.each(data, function (i, v) {
-                          //alert(v.mealname)
                         items.push({
                             title: v.MealType.MealTypeName + ":" + v.ItemName,
-                            //description : v.mealname  + ":" + v.itemname,
                             start: moment(v.MealDate).format("MM/DD/YYYY"),
-                            //end  : moment(v.mealdate),
                             color: v.ThemeColor
                         });
                     })
@@ -41,18 +34,15 @@
 
                     alert('failed to get data');
                 }
-
             })
 
             function GenerateCalendar(items) {
-                //alert('coming here too')
                 $('#calendar').fullCalendar('destroy');
                 $('#calendar').fullCalendar({
                     contentHeight: 400,
                     defaultDate: new Date(),
                     timeformat: 'h(:mm)a',
                     header: {
-
                         left: 'prev,next today',
                         center: 'title',
                         right: 'month,basicWeek,basicDay,menu'
@@ -61,14 +51,9 @@
                     eventColor: '#378006',
                     events: items,
                     displayEventTime: false
-
-
                 })
-
             }
-
         })
     </script>
-
 }
 

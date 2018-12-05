@@ -2,12 +2,10 @@
 using RecipeTastic.Dtos;
 using RecipeTastic.Models;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using System.Data.Entity;
+using Microsoft.AspNet.Identity;
 
 namespace RecipeTastic.Controllers.Api
 {
@@ -23,7 +21,7 @@ namespace RecipeTastic.Controllers.Api
         {
             var recipeBookDtos = _context.RecipeBooks
                 .Include(c => c.Cuisine)
-                .ToList().Select(Mapper.Map<RecipeBook, RecipeBookDto>);
+                .ToList().Select(Mapper.Map<RecipeBook, RecipeBookDto>).Where(x => x.UserId == User.Identity.GetUserName());
             return Ok(recipeBookDtos);
         }
 

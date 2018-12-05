@@ -1,7 +1,5 @@
-﻿using RecipeTastic.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Microsoft.AspNet.Identity;
+using RecipeTastic.Models;
 using System.Web;
 
 namespace RecipeTastic.Dtos
@@ -17,5 +15,7 @@ namespace RecipeTastic.Dtos
         public string Ingredients { get; set; }
         public int ReadyInMinutes { get; set; }
         public int Servings { get; set; }
+
+        public string UserId { get; set; } = HttpContext.Current.User.Identity.GetUserName();
     }
 }

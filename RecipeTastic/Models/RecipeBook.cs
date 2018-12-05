@@ -25,6 +25,5 @@ namespace RecipeTastic.Models
         public int Servings { get; set; }
 
         public string UserId { get; set; } = HttpContext.Current.User.Identity.GetUserName();
-
     }
 }
