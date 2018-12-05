@@ -2,26 +2,20 @@
     ViewBag.Title = "Home Page";
 }
 
+    <img src="~/Content/Images/foodspices.jpg" style="height:20%; width:100%" />
+
 <div class="jumbotron">
     <h1>RecipeTastic</h1>
-    <p class="lead">Plan meals, Add recipes, and save it in the cookbook.</p>
+    <p class="lead">Search Recipes by Ingredients, Plan meals, Add recipes, and save it in the Recipebook.</p>
 </div>
 
 <div class="row">
     <div class="col-md-4">
         <h3>@Html.ActionLink("Recipe Search By Cuisine", "Index", "Cuisines")</h3>
-        <p>
-            @*It's the set of instructions that describes how to prepare or make something
-            especially a culinary dish.*@
-            Search Recipes by Cuisine.
-        </p>
+        <p>Search Recipes by Cuisine.</p>
     </div>
-    @*<div class="col-md-4">
-        <h3>@Html.ActionLink("Recipe Search Meal Type", "MSearch", "Home")</h3>
-        <p>Search Recipes by meal types.</p>
-    </div>*@
     <div class="col-md-4">
-        <h3>@Html.ActionLink("Recipe Search Ingredients", "Index", "Recipes")</h3>
+        <h3>@Html.ActionLink("Recipe Search By Ingredients", "Index", "Recipes")</h3>
         <p>Search Recipes by ingredients.</p>
     </div>
 </div>

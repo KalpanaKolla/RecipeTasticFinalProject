@@ -60,8 +60,8 @@ namespace RecipeTastic
 
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {
-                ClientId = "816506072823-varmkuak13hptq2et4dodorkl1u5vevq.apps.googleusercontent.com",
-                ClientSecret = "pBnYWgHrYFH2ITTJSadGUUSU"
+                ClientId = "441073787319-mpcvv49rdl4tgcjtm10jdtbmbck0dls7.apps.googleusercontent.com",
+                ClientSecret = "80G5nI9tjh9du8kOBOOgIhe5"
             });
         }
     }

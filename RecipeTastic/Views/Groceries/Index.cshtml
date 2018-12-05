@@ -3,12 +3,19 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <p>
-    @Html.ActionLink("Add Grocery", "New")
+    @Html.ActionLink("Add Grocery", "New","Groceries",new { @class="btn btn-primary"})
 </p>
 <h2>Summary</h2>
 
-<table class="table table-striped">
-    <thead>       <tr>         <th>Grocery Name</th>         <th>Grocery Comment</th>       </tr>     </thead>
+<table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+        <th>Grocery Name</th>
+        <th>Grocery Comment</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        </tr>     
+    </thead>
     <tbody>
         @foreach (var Grocery in Model)
         {
