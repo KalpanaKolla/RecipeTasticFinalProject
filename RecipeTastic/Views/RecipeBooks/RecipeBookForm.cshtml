@@ -6,30 +6,39 @@
 
 <h2>@Model.Title</h2>
 
+
+
 @using (Html.BeginForm("Save", "RecipeBooks"))
 {
+    @Html.ValidationSummary(true, "Please Fix the Following Errors")
     <div class="form-group">
         @Html.LabelFor(m => m.RecipeBook.RecipeTitle)
         @Html.TextBoxFor(m => m.RecipeBook.RecipeTitle, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.RecipeBook.RecipeTitle)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.RecipeBook.CuisineId)
         @Html.DropDownListFor(m => m.RecipeBook.CuisineId, new SelectList(Model.Cuisines, "CuisineId", "CuisineName"), "Select Cuisine", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.RecipeBook.CuisineId)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.RecipeBook.Ingredients)
         @Html.TextBoxFor(m => m.RecipeBook.Ingredients, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.RecipeBook.Ingredients)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.RecipeBook.ReadyInMinutes)
         @Html.TextBoxFor(m => m.RecipeBook.ReadyInMinutes, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.RecipeBook.ReadyInMinutes)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.RecipeBook.Servings)
         @Html.TextBoxFor(m => m.RecipeBook.Servings, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.RecipeBook.Servings)
     </div>
     @Html.HiddenFor(m => m.RecipeBook.RecipeBookId)
     @Html.AntiForgeryToken()
+
     <button type="submit" class="btn btn-primary">Save</button>
 }
 @section scripts
